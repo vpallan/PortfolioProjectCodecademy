@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio Project</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@200;400;700&display=swap" rel="stylesheet">
+    <script src = "https://kit.fontawesome.com/4d460528ca.js" crossorigin="anonymous"></script>
+</head>
+<body>
+  <header>
+      <nav>
+        <input type = "checkbox" id = "check">
+        <label for = "check" class="checkbtn">
+            <i class = "fa-solid fa-bars"></i>
+        </label>
+        <label class = "logo">Vikram Pallan</label>
+        <ul>
+          <li><a href = "#">About Me</a></li>
+          <li><a href = "#">Projects</a></li>
+          <li><a href = #>Skills</a></li>
+          <li><a href="#">Contact Me</a></li>
+        </ul>
+      </nav>
+  </header>
+  <main>
+    <section class="flex-container">
+      <div class="flex-item flex-item-1">
+        <h2 style="padding-bottom: 10px; font-size: 1.75rem;">About Me</h2>
+        <p style="line-height: 1.5rem; font-size: 1.1rem;">Hello! My name is Vikram Pallan, I'm 16 years old, and I live in 
+           New York City. I play baseball and squash and some of my hobbies include travel and biking.
+           <br><br>
+           I took interest in web development just after I turned 13 years old, which was right before
+           the pandemic. I work on my WD skills almost every day and take much pleasure in doing so!
+           <br><br>
+           Some of my strengths include discipline, teamwork, work ethic, and generosity.
+        </p>
+      </div>
+      <div class="flex-item flex-item-2">
+        <img src="./VikramPallan.jpg" alt="Vikram Pallan">
+      </div>
+    </section>
+  </main>
+</body>
+</html>
+<style>
+    * {
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+        font-family: 'Inter', sans-serif;
+        background-color: white;
+        text-decoration: none;
+    }
+
+    nav {
+        background: white;
+        padding-top: 1rem;
+        padding-bottom: 1rem;
+        width: 100%;
+    }
+
+    label.logo {
+        color: black;
+        font-size: 35px;
+        line-height: 80px;
+        padding: 0 100px;
+        font-weight: bold;
+    }
+
+    nav ul {
+        float: right;
+        margin-right: 4rem;
+    }
+
+    nav ul li {
+        display: inline-block;
+        line-height: 80px;
+        margin: 0 5px;
+        font-size: 1.25rem;
+        padding: 0rem 1.25rem;
+    }
+
+    nav ul li a {
+        color: black;
+        font: 17px;
+        transition: all 0.3s;
+    }
+
+    nav ul li a:hover {
+        color: blue;
+    }
+
+    .checkbtn {
+        font-size: 30px;
+        color: black;
+        float:right;
+        line-height:80px;
+        margin-right:40px;
+        cursor: pointer;
+        display:none;
+    }
+
+    #check {
+        display: none;
+    }
+
+    html {
+        font-size: 16px;
+        scroll-behavior: smooth;
+    }
+
+    .flex-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .flex-item {
+        width: 30rem;
+        height: 20rem;
+        margin: 1rem;
+    }
+
+    .flex-item-2 img {
+        width: 30rem;
+        height: 20rem;
+        border-radius: 15px;
+    }
+
+
+
+    @media only screen and (max-width: 768px) {
+        label.logo {
+            font-size: 30px;
+            padding-left:30px;
+        }
+        
+        nav ul li a {
+            font-size: 16px;
+        }
+    }
+
+    @media only screen and (max-width: 768px) {
+        .checkbtn {
+            display: block;
+        }
+        ul {
+            position: fixed;
+            width: 100%;
+            height: 100vh;
+            background:black;
+            top: 80px;
+            left: -100%;
+            text-align: center;
+            transition: all .5s;
+        }
+
+        nav ul li {
+            display: block;
+            margin: 50px 0;
+            line-height: 30px;
+            background-color: black;
+            color: white;
+        }
+
+        nav ul li a {
+            font-size: 20px;
+            background-color: black;
+            color: white;
+        }
+        #check:checked ~ ul {
+            left: 0;
+        }
+    }
+
+    @media only screen and (max-width: 397px) {
+        label.logo {
+            font-size: 25px;
+        }
+    }
+</style>
