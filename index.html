@@ -11,7 +11,7 @@
     <script src = "https://kit.fontawesome.com/4d460528ca.js" crossorigin="anonymous"></script>
 </head>
 <body>
-  <header>
+  <header id="header">
       <nav>
         <input type = "checkbox" id = "check">
         <label for = "check" class="checkbtn">
@@ -23,10 +23,11 @@
           <li><a href = "#">Projects</a></li>
           <li><a href = #>Skills</a></li>
           <li><a href="#">Contact Me</a></li>
+          <li id="dark">Dark Mode</li>
         </ul>
       </nav>
   </header>
-  <main>
+  <main id="main">
     <section class="flex-container">
       <div class="flex-item flex-item-1">
         <h2 style="padding-bottom: 10px; font-size: 1.75rem;">About Me</h2>
@@ -43,7 +44,8 @@
         <img src="./VikramPallan.jpg" alt="Vikram Pallan">
       </div>
     </section>
-    <h2 style="text-align: center;">Projects</h2>
+   <section class="projects">
+    <h2 style="text-align: center; margin-bottom: 1rem;">Projects</h2>
     <section class="flex-container-2">
       <div class="flex">
         <img src="MixedMessagesProjectScreenshot.png" alt="Mixed Messages Project">
@@ -61,7 +63,8 @@
         <p>Built with HTML and CSS</p>
       </div>
     </section>
-    <section class="skills">
+   </section>
+   <section class="skills">
      <h2 style="text-align: center; margin-bottom: 2rem;">Skills</h2>
      <section class="skills-flex">
        <div class="skills-flex-1">
@@ -89,12 +92,10 @@
         margin: 0;
         box-sizing: border-box;
         font-family: 'Inter', sans-serif;
-        background-color: white;
         text-decoration: none;
     }
 
     nav {
-        background: white;
         padding-top: 1rem;
         padding-bottom: 1rem;
         width: 100%;
@@ -119,6 +120,7 @@
         margin: 0 5px;
         font-size: 1.25rem;
         padding: 0rem 1.25rem;
+        cursor: pointer;
     }
 
     nav ul li a {
@@ -150,10 +152,11 @@
         scroll-behavior: smooth;
     }
 
-    .flex-container {
+    .flex-container, .flex-container-2 {
         display: flex;
         justify-content: center;
         align-items: center;
+        flex-wrap: wrap;
     }
 
     .flex-item {
@@ -165,11 +168,11 @@
     .flex-item-2 img {
         width: 30rem;
         height: 20rem;
-        border-radius: 15px;
+        border-radius: 1rem;
     }
 
     .flex {
-        margin: 0.6rem
+        margin: 0.8rem
     }
 
     .flex img {
@@ -178,7 +181,7 @@
         border-radius: 1rem;
     }
 
-    .flex h3, p {
+    .flex h3, .flex p {
         text-align: center;
         margin: 0.5rem;
     }
@@ -196,6 +199,7 @@
         display: flex;
         justify-content: center;
         align-items: center;
+        flex-wrap: wrap;
     }
 
     .skills-flex img {
@@ -217,6 +221,11 @@
         width: 4rem;
         height: 2rem;
     }
+
+    #light {
+        display: none;
+    }
+
 
 
 
@@ -270,3 +279,96 @@
         }
     }
 </style>
+<script>
+
+    let darkMode = document.getElementById("dark");
+    
+    let eventFunction = () => {
+
+      let main = document.getElementById('main');
+      let header = document.getElementById('header');
+
+      darkMode.innerHTML = "Light Mode"
+      darkMode.style.display = "white";
+      main.style.backgroundColor = "#121212";
+      header.style.backgroundColor = "#121212";
+      
+      var paragraph = document.getElementsByTagName("p"), i, len;
+      var headingTwo = document.getElementsByTagName("h2"), i, len;
+      var listItems = document.getElementsByTagName("li"), i, len;
+      var headingThree = document.getElementsByTagName("h3"), i, len;
+      var anchor = document.getElementsByTagName("a"), i, len;
+      var label = document.getElementsByTagName("label"), i, len;
+  
+    for (i = 0, len = headingTwo.length; i < len; i++) {
+    headingTwo[i].style.color = 'white';
+     }
+
+    for (i = 0, len = paragraph.length; i < len; i++) {
+    paragraph[i].style.color = "white";
+    }
+
+    for (i = 0, len = listItems.length; i < len; i++) {
+    listItems[i].style.color = "white";
+    }
+
+    for (i = 0, len = headingThree.length; i < len; i++) {
+    headingThree[i].style.color = "white";
+    }
+
+    for (i = 0, len = anchor.length; i < len; i++) {
+    anchor[i].style.color = "white";
+    }
+
+    for (i = 0, len = label.length; i < len; i++) {
+    label[i].style.color = "white";
+    }
+
+    darkMode.addEventListener('click', reverseEventFunction);
+
+    }
+
+
+
+    let reverseEventFunction = () => {
+      let main = document.getElementById('main');
+      let header = document.getElementById('header');
+      
+      darkMode.innerHTML = "Dark Mode";
+      darkMode.style.color = "black";
+      main.style.backgroundColor = "white";
+      header.style.backgroundColor = "white";
+      
+      var paragraph = document.getElementsByTagName("p"), i, len;
+      var headingTwo = document.getElementsByTagName("h2"), i, len;
+      var listItems = document.getElementsByTagName("li"), i, len;
+      var headingThree = document.getElementsByTagName("h3"), i, len;
+      var anchor = document.getElementsByTagName("a"), i, len;
+      var label = document.getElementsByTagName("label"), i, len;
+  
+    for (i = 0, len = headingTwo.length; i < len; i++) {
+    headingTwo[i].style.color = 'black';
+     }
+
+    for (i = 0, len = paragraph.length; i < len; i++) {
+    paragraph[i].style.color = "black";
+    }
+
+    for (i = 0, len = headingThree.length; i < len; i++) {
+    headingThree[i].style.color = "black";
+    }
+
+    for (i = 0, len = anchor.length; i < len; i++) {
+    anchor[i].style.color = "black";
+    }
+
+    for (i = 0, len = label.length; i < len; i++) {
+    label[i].style.color = "black";
+    }
+
+    darkMode.addEventListener('click', eventFunction);
+    }
+
+    darkMode.addEventListener('click', eventFunction);
+
+</script>
