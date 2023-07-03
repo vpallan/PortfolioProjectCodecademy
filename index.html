@@ -10,7 +10,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@200;400;700&display=swap" rel="stylesheet">
     <script src = "https://kit.fontawesome.com/4d460528ca.js" crossorigin="anonymous"></script>
 </head>
-<body>
+<body id="body">
   <header id="header">
       <nav>
         <input type = "checkbox" id = "check">
@@ -22,7 +22,7 @@
           <li><a href = "#">About Me</a></li>
           <li><a href = "#">Projects</a></li>
           <li><a href = #>Skills</a></li>
-          <li><a href="#">Contact Me</a></li>
+          <li><a href="./contactme.html">Contact Me</a></li>
           <li id="dark">Dark Mode</li>
         </ul>
       </nav>
@@ -222,10 +222,6 @@
         height: 2rem;
     }
 
-    #light {
-        display: none;
-    }
-
 
 
 
@@ -241,9 +237,19 @@
     }
 
     @media only screen and (max-width: 768px) {
+
+        .flex-item-1 {
+            margin-bottom: 2rem;
+        }
+
+        .skills-flex-1, .skills-flex-2 {
+            margin-bottom: 2rem;
+        }
+
         .checkbtn {
             display: block;
         }
+
         ul {
             position: fixed;
             width: 100%;
@@ -285,6 +291,7 @@
     
     let eventFunction = () => {
 
+      let body = document.getElementById('body');
       let main = document.getElementById('main');
       let header = document.getElementById('header');
 
@@ -292,6 +299,7 @@
       darkMode.style.display = "white";
       main.style.backgroundColor = "#121212";
       header.style.backgroundColor = "#121212";
+      body.style.backgroundColor = "#121212";
       
       var paragraph = document.getElementsByTagName("p"), i, len;
       var headingTwo = document.getElementsByTagName("h2"), i, len;
@@ -331,6 +339,7 @@
 
 
     let reverseEventFunction = () => {
+      let body = document.getElementById('body');
       let main = document.getElementById('main');
       let header = document.getElementById('header');
       
@@ -338,6 +347,7 @@
       darkMode.style.color = "black";
       main.style.backgroundColor = "white";
       header.style.backgroundColor = "white";
+      body.style.backgroundColor = "white";
       
       var paragraph = document.getElementsByTagName("p"), i, len;
       var headingTwo = document.getElementsByTagName("h2"), i, len;
